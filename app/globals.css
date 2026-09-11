@@ -2019,7 +2019,7 @@ img {
 
 .case-final-cta > div { display: flex; align-items: center; flex-direction: column; }
 
-.case-final-cta span {
+.case-final-kicker {
   margin-bottom: 1.3rem;
   color: var(--case-accent);
   font-size: .68rem;
@@ -2038,7 +2038,15 @@ img {
   justify-content: center;
 }
 
-.case-final-cta .button-primary { background: var(--case-accent); }
+.case-final-cta .button-primary {
+  color: var(--bg);
+  background: var(--case-accent);
+}
+
+.case-final-cta .button-primary:hover {
+  color: var(--bg);
+  background: color-mix(in srgb, var(--case-accent) 84%, white);
+}
 
 .next-project {
   display: grid;

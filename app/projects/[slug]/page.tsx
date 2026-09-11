@@ -145,7 +145,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <section className="case-section container case-final-cta">
         <Reveal>
-          <span>¿Construimos algo juntos?</span>
+          <span className="case-final-kicker">¿Construimos algo juntos?</span>
           <h2>Si tenés un proyecto que necesita avanzar, hablemos.</h2>
           <div>
             <ButtonLink
