@@ -51,7 +51,7 @@ export const projects: Project[] = [
       "Experiencia consistente en desktop y mobile",
     ],
     mediaKey: "camping",
-    coverPath: "/projects/camping/cover.jpg",
+    coverPath: "/projects/camping/cover.webp",
     galleryPaths: [
       "/projects/camping/detail-01.jpg",
       "/projects/camping/detail-02.jpg",
@@ -90,7 +90,7 @@ export const projects: Project[] = [
       "Experiencia práctica construyendo y operando un producto propio",
     ],
     mediaKey: "tower",
-    coverPath: "/projects/tower/cover.jpg",
+    coverPath: "/projects/tower/cover.webp",
     galleryPaths: [
       "/projects/tower/detail-01.jpg",
       "/projects/tower/detail-02.jpg",
