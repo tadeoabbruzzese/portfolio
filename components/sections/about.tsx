@@ -1,3 +1,4 @@
+import { SceneVisual } from "@/components/ui/scene-visual";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -31,6 +32,7 @@ export function About() {
           </Reveal>
 
           <Reveal className="about-principles" delay={0.08}>
+            <SceneVisual src="/scenes/about-fictional-20261013.png" alt="Escena conceptual de un desarrollador ficticio planificando una aplicación en su escritorio" className="about-scene" sizes="(max-width: 820px) 92vw, 40vw" />
             <div className="principle">
               <span>01</span>
               <div><strong>Entender antes de construir</strong><p>La mejor solución empieza por el problema correcto.</p></div>

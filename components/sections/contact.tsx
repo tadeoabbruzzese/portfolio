@@ -1,3 +1,4 @@
+import { SceneVisual } from "@/components/ui/scene-visual";
 import { ArrowUpRight, Github, Linkedin, Mail, Whatsapp } from "@/components/ui/icons";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Reveal } from "@/components/ui/reveal";
@@ -13,7 +14,8 @@ export function Contact() {
   return (
     <section id="contacto" className="section contact-section" aria-labelledby="contact-title">
       <div className="container">
-        <Reveal className="contact-panel">
+        <Reveal className="contact-panel contact-panel-with-scene">
+          <SceneVisual src="/scenes/contact-fictional-20261013.png" alt="Escena conceptual de un desarrollador ficticio trabajando en su computadora" className="contact-scene" />
           <p className="eyebrow"><span aria-hidden="true" /> Contacto</p>
           <h2 id="contact-title">¿Tenés un proyecto en mente o una oportunidad donde pueda aportar?</h2>
           <p className="contact-description">

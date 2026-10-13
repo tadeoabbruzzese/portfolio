@@ -3,7 +3,7 @@ import path from "node:path";
 import Image from "next/image";
 
 export function ProfileVisual() {
-  const hasPhoto = existsSync(path.join(process.cwd(), "public", "tadeo-profile.jpg"));
+  const hasPhoto = existsSync(path.join(process.cwd(), "public", "developer-workspace-fictional.png"));
 
   return (
     <div className="profile-composition">
@@ -14,19 +14,19 @@ export function ProfileVisual() {
       <div className="profile-frame">
         {hasPhoto ? (
           <Image
-            src="/tadeo-profile.jpg"
-            alt="Retrato profesional de Tadeo Abbruzzese"
+            src="/developer-workspace-fictional.png"
+            alt="Persona ficticia desarrollando software en una computadora"
             fill
             priority
             sizes="(max-width: 767px) 90vw, 38vw"
             className="profile-photo"
           />
         ) : (
-          <div className="profile-placeholder" role="img" aria-label="Espacio reservado para la foto de Tadeo">
+          <div className="profile-placeholder" role="img" aria-label="Espacio reservado para una escena de desarrollo">
             <div className="profile-grid" />
             <div className="profile-monogram">TA</div>
-            <p>Retrato profesional</p>
-            <span>Reemplazar en /public/tadeo-profile.jpg</span>
+            <p>Escena de desarrollo</p>
+            <span>Reemplazar en /public/developer-workspace-fictional.png</span>
           </div>
         )}
       </div>

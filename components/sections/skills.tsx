@@ -1,3 +1,4 @@
+import { SceneVisual } from "@/components/ui/scene-visual";
 import { skillGroups } from "@/data/skills";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -42,6 +43,9 @@ export function Skills() {
             </Reveal>
           ))}
         </div>
+        <Reveal className="skills-scene-wrap">
+          <SceneVisual src="/scenes/skills-fictional-20261013.png" alt="Escena conceptual de manos sobre un teclado y un monitor con código" className="landing-scene-wide" />
+        </Reveal>
       </div>
     </section>
   );

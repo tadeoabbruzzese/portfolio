@@ -1,3 +1,4 @@
+import { SceneVisual } from "@/components/ui/scene-visual";
 import { services } from "@/data/skills";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -17,6 +18,10 @@ export function Services() {
             description="Trabajo de forma directa, desde entender la necesidad hasta poner la solución en producción."
             align="split"
           />
+        </Reveal>
+
+        <Reveal className="services-scene-wrap">
+          <SceneVisual src="/scenes/services-fictional-20261013.png" alt="Escena conceptual de una persona ficticia desarrollando una aplicación web" className="landing-scene-wide" />
         </Reveal>
 
         <div className="services-list">
