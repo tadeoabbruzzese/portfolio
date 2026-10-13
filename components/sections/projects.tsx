@@ -1,6 +1,6 @@
-import Link from "next/link";
+import Image from "next/image";
 import { projects } from "@/data/projects";
-import { ProjectMedia } from "@/components/projects/project-media";
+import { ProjectsCarousel } from "@/components/projects/projects-carousel";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ArrowRight, ArrowUpRight } from "@/components/ui/icons";
@@ -67,57 +67,33 @@ export function ProjectsSection() {
             align="split"
           />
         </Reveal>
-
-        <div className="projects-list featured-projects-list">
+        <ProjectsCarousel names={projects.map(project => highlights[project.slug].name)}>
           {projects.map((project, index) => {
             const detail = highlights[project.slug];
             return (
-              <article key={project.slug} className={`featured-project featured-project-${project.accent}`}>
-                <div className="featured-project-heading">
-                  <span className="featured-project-number" aria-hidden="true">0{index + 1}</span>
-                  <div className="featured-project-meta">
-                    <span className="featured-project-type">{detail.type}</span>
-                    <span>{detail.period}</span>
-                  </div>
-                  <span className="featured-project-status"><i aria-hidden="true" /> Publicado</span>
-                </div>
-
-                <Reveal className="featured-project-media project-media-wrap" y={24}>
-                  <Link href={`/projects/${project.slug}`} aria-label={`Ver caso de estudio de ${detail.name}`}>
-                    <ProjectMedia project={project} pathOverride={detail.image} />
-                  </Link>
-                  <div className="featured-project-caption">
-                    <span>{detail.domain}</span>
-                    <span>Captura del sitio actual <ArrowUpRight /></span>
-                  </div>
-                  {project.mediaKey === "tower" && <p className="featured-project-attribution">Tower of Fantasy: personajes y arte de sus respectivos titulares.</p>}
-                </Reveal>
-
-                <Reveal className="featured-project-copy" delay={0.08}>
+              <article key={project.slug} className={`project-banner project-banner-${project.accent}`} role="group" aria-roledescription="diapositiva" aria-label={`${detail.name}, ${index + 1} de ${projects.length}`}>
+                <Image src={detail.image} alt={`Captura actual de ${detail.name}`} fill loading="lazy" sizes="(max-width: 1440px) 100vw, 1240px" className="project-banner-image" />
+                <div className="project-banner-content">
+                  <div className="project-banner-meta"><span>{detail.type}</span><span>{detail.period}</span></div>
                   <h3>{detail.name}</h3>
-                  <p className="featured-project-headline">{detail.headline}</p>
-                  <p className="featured-project-summary">{detail.summary}</p>
-                  <div className="tag-list" aria-label="Tecnologías del proyecto">
-                    {detail.stack.map((technology) => <span key={technology}>{technology}</span>)}
+                  <p className="project-banner-headline">{detail.headline}</p>
+                  <p className="project-banner-summary">{detail.summary}</p>
+                  <div className="tag-list" aria-label={`Tecnologías de ${detail.name}`}>
+                    {detail.stack.map(technology => <span key={technology}>{technology}</span>)}
                   </div>
-                  <div className="featured-project-actions">
+                  <div className="project-banner-actions">
                     <ButtonLink href={`/projects/${project.slug}`} icon={<ArrowRight />}>Ver caso de estudio</ButtonLink>
                     <ButtonLink href={detail.url} external variant="secondary" icon={<ArrowUpRight />} ariaLabel={`Abrir ${detail.name} (abre en una nueva pestaña)`}>Abrir sitio</ButtonLink>
                   </div>
-                </Reveal>
-
-                <div className="featured-project-features">
-                  {detail.features.map((feature) => (
-                    <div key={feature.title}>
-                      <span aria-hidden="true" />
-                      <div><strong>{feature.title}</strong><p>{feature.description}</p></div>
-                    </div>
-                  ))}
+                  <ul className="project-banner-features">
+                    {detail.features.map(feature => <li key={feature.title}>{feature.title}</li>)}
+                  </ul>
+                  {project.mediaKey === "tower" && <p className="project-banner-attribution">Tower of Fantasy: personajes y arte de sus respectivos titulares.</p>}
                 </div>
               </article>
             );
           })}
-        </div>
+        </ProjectsCarousel>
       </div>
     </section>
   );

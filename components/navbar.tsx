@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Download, Close, Menu } from "@/components/ui/icons";
 import { navItems } from "@/lib/site";
@@ -28,7 +29,16 @@ export function Navbar() {
     <header className={cn("site-header", scrolled && "site-header-scrolled")}>
       <div className="nav-shell">
         <Link href="/#inicio" className="brand" aria-label="Tadeo Abbruzzese — Inicio">
-          <span className="brand-mark">TA</span>
+          <span className="brand-mark brand-mark-logo" aria-hidden="true">
+            <Image
+              src="/brand/tadeo-logo.png"
+              alt=""
+              width={44}
+              height={44}
+              priority
+              className="brand-logo-image"
+            />
+          </span>
           <span className="brand-name">Tadeo Abbruzzese</span>
         </Link>
 

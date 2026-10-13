@@ -40,7 +40,11 @@ export const metadata: Metadata = {
     description: siteConfig.description,
   },
   icons: {
-    icon: "/icon.svg",
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "16x16 32x32 48x48" },
+      { url: "/icon.svg?v=20261013", type: "image/svg+xml", sizes: "any" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
   },
 };
 
