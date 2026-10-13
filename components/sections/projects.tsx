@@ -4,6 +4,55 @@ import { ProjectMedia } from "@/components/projects/project-media";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ArrowRight, ArrowUpRight } from "@/components/ui/icons";
+import { ButtonLink } from "@/components/ui/button-link";
+
+type ProjectHighlight = {
+  name: string;
+  type: string;
+  period: string;
+  headline: string;
+  summary: string;
+  image: string;
+  url: string;
+  domain: string;
+  stack: string[];
+  features: { title: string; description: string }[];
+};
+
+const highlights: Record<string, ProjectHighlight> = {
+  "camping-fossa-lupara": {
+    name: "Camping Fossa Lupara",
+    type: "Freelance · Italia",
+    period: "Abril–octubre 2026",
+    headline: "De una web de 2010 a un sitio administrable.",
+    summary: "Renovación completa para una clienta italiana: diseño a medida, experiencia responsive y herramientas para actualizar contenido sin modificar el código.",
+    image: "/projects/camping/featured-20261012.jpg",
+    url: "https://www.campingfossalupara.com/",
+    domain: "campingfossalupara.com",
+    stack: ["Next.js", "TypeScript", "Firebase"],
+    features: [
+      { title: "Administración", description: "Gestión de precios e imágenes." },
+      { title: "Moderación", description: "Reseñas y comentarios." },
+      { title: "Responsive", description: "Celulares, tablets y escritorio." },
+    ],
+  },
+  "tower-hub": {
+    name: "TowerHub",
+    type: "Proyecto personal",
+    period: "Febrero 2026",
+    headline: "Información del juego, organizada para consultar.",
+    summary: "Aplicación propia de Tower of Fantasy con catálogos, fichas detalladas y navegación interactiva, conectada con persistencia de datos en Firestore.",
+    image: "/projects/tower/featured-20261012.jpg",
+    url: "https://www.towerhub.online/",
+    domain: "towerhub.online",
+    stack: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Firebase"],
+    features: [
+      { title: "Catálogos", description: "Personajes y reliquias." },
+      { title: "Búsqueda y filtros", description: "Consulta de información estructurada." },
+      { title: "Tier list", description: "Exploración interactiva." },
+    ],
+  },
+};
 
 export function ProjectsSection() {
   return (
@@ -12,47 +61,62 @@ export function ProjectsSection() {
         <Reveal>
           <SectionHeading
             id="projects-title"
-            eyebrow="Proyectos seleccionados"
+            eyebrow="Proyectos destacados"
             title="Productos construidos para ser usados."
-            description="Una selección breve y honesta: trabajo para clientes reales y productos personales que llegaron a usuarios reales."
+            description="Un proyecto freelance y una aplicación propia. Explorá el producto real y el caso de cada desarrollo."
             align="split"
           />
         </Reveal>
 
-        <div className="projects-list">
-          {projects.map((project, index) => (
-            <article key={project.slug} className={`project-row project-row-${project.accent}`}>
-              <Reveal className="project-media-wrap" y={24}>
-                <Link href={`/projects/${project.slug}`} aria-label={`Ver caso de estudio de ${project.name}`}>
-                  <ProjectMedia project={project} priority={index === 0} />
-                </Link>
-              </Reveal>
-              <Reveal className="project-info" delay={0.08}>
-                <div className="project-meta">
-                  <span>{project.eyebrow}</span>
-                  <span>{project.year}</span>
+        <div className="projects-list featured-projects-list">
+          {projects.map((project, index) => {
+            const detail = highlights[project.slug];
+            return (
+              <article key={project.slug} className={`featured-project featured-project-${project.accent}`}>
+                <div className="featured-project-heading">
+                  <span className="featured-project-number" aria-hidden="true">0{index + 1}</span>
+                  <div className="featured-project-meta">
+                    <span className="featured-project-type">{detail.type}</span>
+                    <span>{detail.period}</span>
+                  </div>
+                  <span className="featured-project-status"><i aria-hidden="true" /> Publicado</span>
                 </div>
-                <h3>{project.name}</h3>
-                <p>{project.summary}</p>
-                <div className="tag-list">
-                  {project.stack.map((technology) => <span key={technology}>{technology}</span>)}
-                </div>
-                <div className="project-links">
-                  <Link href={`/projects/${project.slug}`}>
-                    Ver case study <ArrowRight />
+
+                <Reveal className="featured-project-media project-media-wrap" y={24}>
+                  <Link href={`/projects/${project.slug}`} aria-label={`Ver caso de estudio de ${detail.name}`}>
+                    <ProjectMedia project={project} pathOverride={detail.image} />
                   </Link>
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${project.cta} (abre en una nueva pestaña)`}
-                  >
-                    {project.cta} <ArrowUpRight />
-                  </a>
+                  <div className="featured-project-caption">
+                    <span>{detail.domain}</span>
+                    <span>Captura del sitio actual <ArrowUpRight /></span>
+                  </div>
+                  {project.mediaKey === "tower" && <p className="featured-project-attribution">Tower of Fantasy: personajes y arte de sus respectivos titulares.</p>}
+                </Reveal>
+
+                <Reveal className="featured-project-copy" delay={0.08}>
+                  <h3>{detail.name}</h3>
+                  <p className="featured-project-headline">{detail.headline}</p>
+                  <p className="featured-project-summary">{detail.summary}</p>
+                  <div className="tag-list" aria-label="Tecnologías del proyecto">
+                    {detail.stack.map((technology) => <span key={technology}>{technology}</span>)}
+                  </div>
+                  <div className="featured-project-actions">
+                    <ButtonLink href={`/projects/${project.slug}`} icon={<ArrowRight />}>Ver caso de estudio</ButtonLink>
+                    <ButtonLink href={detail.url} external variant="secondary" icon={<ArrowUpRight />} ariaLabel={`Abrir ${detail.name} (abre en una nueva pestaña)`}>Abrir sitio</ButtonLink>
+                  </div>
+                </Reveal>
+
+                <div className="featured-project-features">
+                  {detail.features.map((feature) => (
+                    <div key={feature.title}>
+                      <span aria-hidden="true" />
+                      <div><strong>{feature.title}</strong><p>{feature.description}</p></div>
+                    </div>
+                  ))}
                 </div>
-              </Reveal>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

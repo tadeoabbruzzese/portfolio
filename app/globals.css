@@ -2360,3 +2360,76 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Tarjetas destacadas: reglas limitadas a la sección de proyectos. */
+.projects-section .featured-projects-list { gap: 3rem; }
+.projects-section .featured-project {
+  --project-accent: var(--lime);
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, .9fr);
+  gap: 2rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border: 1px solid color-mix(in srgb, var(--project-accent) 26%, var(--line));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--project-accent) 5%, var(--surface)) 0%, var(--bg-soft) 68%);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, .25);
+}
+.projects-section .featured-project-blue { --project-accent: var(--blue); }
+.projects-section .featured-project-heading {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  grid-column: 1 / -1;
+  padding-bottom: 1.3rem;
+  border-bottom: 1px solid var(--line);
+}
+.projects-section .featured-project-number { color: var(--project-accent); font-size: 2.5rem; font-weight: 600; letter-spacing: -.08em; line-height: 1; }
+.projects-section .featured-project-meta { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1.5rem; color: #b8c0b8; font-size: .875rem; }
+.projects-section .featured-project-type { color: var(--text); font-weight: 650; }
+.projects-section .featured-project-status { display: flex; gap: .5rem; align-items: center; margin-left: auto; color: var(--project-accent); font-size: .875rem; white-space: nowrap; }
+.projects-section .featured-project-status i { width: 6px; height: 6px; background: currentColor; border-radius: 50%; }
+.projects-section .featured-project-media { min-width: 0; align-self: center; }
+.projects-section .featured-project-media .project-media { aspect-ratio: 1.6; border-color: rgba(238,242,232,.2); box-shadow: 0 16px 40px rgba(0,0,0,.3); }
+.projects-section .featured-project-caption { display: flex; justify-content: space-between; align-items: center; gap: .75rem; padding-top: .9rem; font-size: .8125rem; color: #b8c0b8; flex-wrap: wrap; }
+.projects-section .featured-project-caption > span:last-child { display: flex; align-items: center; gap: .4rem; }
+.projects-section .featured-project-caption svg { width: 14px; height: 14px; color: var(--project-accent); }
+.projects-section .featured-project-attribution { margin: .45rem 0 0; color: #a4ada5; font-size: .8125rem; }
+.projects-section .featured-project-copy { min-width: 0; align-self: center; }
+.projects-section .featured-project-copy h3 { margin: 0 0 1.1rem; font-size: clamp(2.2rem, 3.3vw, 3.4rem); line-height: 1.02; font-weight: 600; letter-spacing: -.055em; text-wrap: balance; }
+.projects-section .featured-project-headline { margin: 0 0 .85rem; color: var(--project-accent); font-size: 1.0625rem; font-weight: 600; line-height: 1.5; }
+.projects-section .featured-project-summary { margin: 0; color: #b8c0b8; font-size: 1rem; line-height: 1.65; }
+.projects-section .featured-project .tag-list { margin-top: 1.5rem; }
+.projects-section .featured-project .tag-list span { color: #c1c7bf; font-size: .8125rem; padding: .35rem .55rem; }
+.projects-section .featured-project-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
+.projects-section .featured-project-actions .button-link { font-size: .875rem; gap: .6rem; padding-inline: 1rem; }
+.projects-section .featured-project-actions .button-primary { background: var(--project-accent); color: var(--bg); }
+.projects-section .featured-project-actions .button-primary:hover { background: color-mix(in srgb, var(--project-accent) 85%, white); }
+.projects-section .featured-project-features { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); padding-top: 1.6rem; gap: 1.5rem; }
+.projects-section .featured-project-features > div { display: flex; gap: .75rem; }
+.projects-section .featured-project-features > div > span { flex: 0 0 6px; width: 6px; height: 6px; margin-top: .65rem; background: var(--project-accent); }
+.projects-section .featured-project-features strong { font-size: 1rem; font-weight: 600; }
+.projects-section .featured-project-features p { margin: .25rem 0 0; font-size: .875rem; color: #aeb7ae; line-height: 1.5; }
+.projects-section .featured-project:nth-child(even) { grid-template-columns: minmax(0, .9fr) minmax(0, 1.3fr); }
+.projects-section .featured-project:nth-child(even) .featured-project-media { grid-column: 2; grid-row: 2; }
+.projects-section .featured-project:nth-child(even) .featured-project-copy { grid-column: 1; grid-row: 2; }
+@media (max-width: 1100px) {
+  .projects-section .featured-project { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 1.5rem; }
+  .projects-section .featured-project:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+}
+@media (max-width: 820px) {
+  .projects-section .featured-project { grid-template-columns: minmax(0, 1fr); }
+  .projects-section .featured-project:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
+  .projects-section .featured-project:nth-child(even) .featured-project-media,
+  .projects-section .featured-project:nth-child(even) .featured-project-copy { grid-column: 1; grid-row: auto; }
+  .projects-section .featured-project-copy h3 { font-size: clamp(2.2rem, 6vw, 3.2rem); }
+}
+@media (max-width: 620px) {
+  .projects-section .featured-project { padding: 1rem; gap: 1.5rem; }
+  .projects-section .featured-project-heading { gap: .9rem; flex-wrap: wrap; }
+  .projects-section .featured-project-number { font-size: 2rem; }
+  .projects-section .featured-project-meta { flex: 1; flex-direction: column; align-items: flex-start; gap: .25rem; font-size: .8125rem; }
+  .projects-section .featured-project-status { font-size: .8125rem; margin-left: 0; }
+  .projects-section .featured-project-copy h3 { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .projects-section .featured-project-features { grid-template-columns: 1fr; gap: 1rem; }
+  .projects-section .featured-project-actions { flex-direction: column; }
+  .projects-section .featured-project-actions .button-link { width: 100%; }
+}
