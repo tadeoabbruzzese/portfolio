@@ -29,6 +29,11 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       description: project.summary,
       type: "article",
     },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.name} — Case study`,
+      description: project.summary,
+    },
   };
 }
 
@@ -78,7 +83,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section className="case-section container case-summary" aria-labelledby="summary-title">
         <Reveal className="case-section-label"><span>01</span><p>Resumen</p></Reveal>
         <Reveal className="case-intro" delay={0.05}>
-          <h2 id="summary-title">Una solución pensada alrededor de una necesidad concreta.</h2>
+          <h2 id="summary-title">{project.headline}</h2>
           <p>{project.summary}</p>
         </Reveal>
       </section>

@@ -5,6 +5,7 @@ export type Project = {
   year: string;
   url: string;
   cta: string;
+  headline: string;
   summary: string;
   description: string;
   challenge: string;
@@ -23,32 +24,33 @@ export const projects: Project[] = [
   {
     slug: "camping-fossa-lupara",
     name: "Camping Fossa Lupara",
-    eyebrow: "Cliente real · Desarrollo end-to-end",
-    year: "2025",
-    url: "https://campingfossalupara.com",
+    eyebrow: "Proyecto freelance · Italia",
+    year: "Abril–octubre de 2026",
+    url: "https://www.campingfossalupara.com/",
     cta: "Visitar sitio",
+    headline: "De una web obsoleta a una solución moderna y administrable.",
     summary:
-      "El sitio oficial de un camping italiano, desarrollado de punta a punta para facilitar el descubrimiento, la consulta y las reservas desde cualquier dispositivo.",
+      "Modernicé el sitio de un camping italiano con un diseño responsive a medida, gestión de precios e imágenes y reseñas con moderación. El sitio está en funcionamiento y permite administrar parte del contenido sin modificar el código.",
     description:
-      "Una presencia digital clara, cálida y funcional para un negocio real. El proyecto combinó producto, diseño y desarrollo en contacto directo con el cliente.",
+      "Una clienta italiana necesitaba renovar la presencia digital de su camping. Trabajé directamente con ella para transformar su sitio de 2010 en una web moderna y administrable.",
     challenge:
-      "Convertir la experiencia del camping en un sitio fácil de explorar, con información dinámica y un recorrido de reserva claro, especialmente desde mobile.",
+      "El sitio anterior databa de 2010 y no ofrecía una experiencia adecuada para celulares y tabletas. La clienta necesitaba modernizar su presencia digital y contar con herramientas para gestionar precios e imágenes.",
     solution:
-      "Diseñé y desarrollé una experiencia responsive conectada a Supabase, organizando el contenido y las funcionalidades de reserva alrededor de las necesidades concretas de huéspedes y administradores.",
+      "Relevé las necesidades directamente con la clienta, renové el diseño y desarrollé un sitio responsive con una identidad visual personalizada. Incorporé herramientas administrativas para gestionar precios e imágenes y un sistema de reseñas y comentarios con moderación.",
     role:
-      "Me ocupé del proyecto completo: relevamiento, decisiones de UX, arquitectura, frontend, integración backend, accesibilidad, performance e iteraciones con el cliente.",
-    stack: ["React", "Vite", "TypeScript", "Supabase", "PostCSS"],
+      "Me ocupé del relevamiento, el rediseño, la implementación con Next.js, TypeScript y Firebase y las iteraciones con la clienta, desde abril hasta octubre de 2026.",
+    stack: ["Next.js", "TypeScript", "Firebase"],
     features: [
-      "Experiencia responsive y mobile-first",
-      "Flujos relacionados con reservas",
-      "Contenido dinámico conectado a Supabase",
-      "Iteración directa a partir del feedback del cliente",
-      "Buenas prácticas de accesibilidad y performance",
+      "Sitio responsive para celulares, tabletas y escritorio",
+      "Diseño e identidad visual personalizados",
+      "Herramientas administrativas para gestionar precios e imágenes",
+      "Sistema de reseñas y comentarios con moderación",
+      "Iteraciones a partir del feedback directo de la clienta",
     ],
     results: [
-      "Sitio oficial publicado y operativo",
-      "Un canal digital propio para consultas y reservas",
-      "Experiencia consistente en desktop y mobile",
+      "Sitio web moderno publicado y en funcionamiento",
+      "Gestión de precios e imágenes sin modificar el código",
+      "Experiencia adaptada a celulares, tabletas y escritorio",
     ],
     mediaKey: "camping",
     coverPath: "/projects/camping/cover.webp",
@@ -61,33 +63,34 @@ export const projects: Project[] = [
   },
   {
     slug: "tower-hub",
-    name: "Tower Hub",
-    eyebrow: "Proyecto personal · Plataforma web",
-    year: "2023",
+    name: "TowerHub",
+    eyebrow: "Proyecto personal · Aplicación web",
+    year: "Febrero de 2026",
     url: "https://www.towerhub.online/",
     cta: "Visitar proyecto",
+    headline: "De información dispersa a una aplicación de consulta interactiva.",
     summary:
-      "Una plataforma comunitaria que centraliza información útil de Tower of Fantasy y convierte contenido disperso en una experiencia ordenada y fácil de consultar.",
+      "TowerHub es una aplicación personal para organizar y consultar información de Tower of Fantasy. Reúne catálogos de personajes y reliquias, búsqueda, filtros, fichas detalladas y una tier list interactiva.",
     description:
-      "Un producto personal nacido de detectar una fricción real dentro de una comunidad de jugadores y construir una solución completa alrededor de ella.",
+      "Desarrollé TowerHub en febrero de 2026 como un proyecto personal para organizar y consultar información de Tower of Fantasy desde una aplicación web.",
     challenge:
-      "La información que necesitaban los jugadores estaba repartida entre múltiples fuentes, con formatos inconsistentes y recorridos de consulta poco prácticos.",
+      "Decidí abordar la consulta de información dispersa de Tower of Fantasy, reuniendo personajes y reliquias en una aplicación propia con información estructurada y navegación interactiva.",
     solution:
-      "Construí una plataforma full stack que organiza el contenido en una interfaz clara, con una arquitectura preparada para administrar y ampliar la información disponible.",
+      "Construí catálogos de personajes y reliquias con búsqueda, filtros, fichas detalladas y una tier list interactiva. Utilicé Next.js, React, JavaScript y Tailwind CSS para la interfaz, con Firebase/Firestore para la persistencia de datos.",
     role:
-      "Definí el producto y desarrollé tanto la experiencia frontend como el backend y el modelo de datos, desde la idea inicial hasta su publicación y uso real.",
-    stack: ["React", "Node.js", "MongoDB"],
+      "Definí y desarrollé la aplicación como un proyecto personal: organicé la información, construí las interfaces de consulta e implementé la navegación interactiva y la persistencia de datos en Firebase/Firestore.",
+    stack: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Firebase / Firestore"],
     features: [
-      "Biblioteca centralizada de información",
-      "Navegación pensada para consultas rápidas",
-      "Contenido estructurado y escalable",
-      "Arquitectura full stack",
-      "Diseño orientado a una comunidad específica",
+      "Catálogos de personajes y reliquias",
+      "Búsqueda y filtros para consultar información",
+      "Fichas detalladas",
+      "Tier list interactiva",
+      "Información estructurada y navegación interactiva",
     ],
     results: [
-      "Utilizada por cientos de usuarios",
-      "Validación de una necesidad real de la comunidad",
-      "Experiencia práctica construyendo y operando un producto propio",
+      "Aplicación propia publicada para consultar información de Tower of Fantasy",
+      "Experiencia práctica organizando información estructurada y construyendo interfaces de consulta",
+      "Funcionalidades transferibles a catálogos comerciales, directorios y portales especializados",
     ],
     mediaKey: "tower",
     coverPath: "/projects/tower/cover.webp",
