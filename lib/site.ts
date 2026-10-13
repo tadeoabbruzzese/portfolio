@@ -17,11 +17,10 @@ export const whatsappUrl = `https://wa.me/${siteConfig.phone}?text=${encodeURICo
 )}`;
 
 export const navItems = [
-  { label: "Inicio", href: "/#inicio" },
+  { label: "Proyectos", href: "/#proyectos" },
+  { label: "Soluciones", href: "/#soluciones" },
   { label: "Sobre mí", href: "/#sobre-mi" },
   { label: "Experiencia", href: "/#experiencia" },
-  { label: "Proyectos", href: "/#proyectos" },
-  { label: "Servicios", href: "/#servicios" },
   { label: "Contacto", href: "/#contacto" },
 ];
 

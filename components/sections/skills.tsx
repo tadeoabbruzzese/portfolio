@@ -1,50 +1,36 @@
-import { SceneVisual } from "@/components/ui/scene-visual";
-import { skillGroups } from "@/data/skills";
+import { SolutionsCarousel } from "@/components/solutions-carousel";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { TechIcon } from "@/components/ui/tech-icon";
+import { ButtonLink } from "@/components/ui/button-link";
+import { Whatsapp } from "@/components/ui/icons";
+import { whatsappUrl } from "@/lib/site";
 
-export function Skills() {
+export function Solutions() {
   return (
-    <section className="section skills-section" aria-labelledby="skills-title">
+    <section id="soluciones" className="section solutions-section" aria-labelledby="solutions-title">
+      <span id="servicios" className="solutions-anchor" aria-hidden="true" />
       <div className="container">
         <Reveal>
           <SectionHeading
-            id="skills-title"
-            eyebrow="Capacidades técnicas"
-            title="Tecnología al servicio del producto."
-            description="No trabajo desde una lista rígida: combino herramientas según el problema, la escala y el mantenimiento que necesita cada solución."
-            align="split"
+            id="solutions-title"
+            eyebrow="Soluciones"
+            title="Soluciones para tu negocio"
+            description="Desarrollo herramientas digitales para presentar tu negocio, organizar información y simplificar procesos. Cada solución se adapta a lo que realmente necesitás."
+            align="left"
           />
         </Reveal>
-        <div className="skills-grid">
-          {skillGroups.map((group, index) => (
-            <Reveal key={group.name} className="skill-group" delay={index * 0.04}>
-              <div className="skill-group-title">
-                <span className="skill-group-icon"><TechIcon name={group.icon} /></span>
-                <div>
-                  <span className="skill-group-index">0{index + 1} / {group.label}</span>
-                  <h3>{group.name}</h3>
-                </div>
-              </div>
-              <p className="skill-group-description">{group.description}</p>
-              <div className="skill-group-outcome">
-                <span>Aplicado en</span>
-                <strong>{group.outcome}</strong>
-              </div>
-              <ul>
-                {group.items.map((item) => (
-                  <li key={item.name}>
-                    <TechIcon name={item.icon} />
-                    <span>{item.name}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal className="skills-scene-wrap">
-          <SceneVisual src="/scenes/skills-fictional-20261013.png" alt="Escena conceptual de manos sobre un teclado y un monitor con código" className="landing-scene-wide" />
+        <p className="solutions-visual-note">Visuales conceptuales de servicios.</p>
+        <SolutionsCarousel />
+        <Reveal className="solutions-cta">
+          <p>¿Tenés una idea, un proceso manual o un producto que necesita avanzar?</p>
+          <ButtonLink
+            href={whatsappUrl}
+            external
+            icon={<Whatsapp />}
+            ariaLabel="Contarle un proyecto a Tadeo por WhatsApp (abre en una nueva pestaña)"
+          >
+            Contame tu proyecto
+          </ButtonLink>
         </Reveal>
       </div>
     </section>

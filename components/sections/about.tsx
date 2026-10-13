@@ -27,7 +27,7 @@ export function About() {
               Actualmente trabajo como <strong>AI Strategist y Full Stack Software Developer</strong>, combinando desarrollo tradicional con inteligencia artificial para resolver problemas concretos.
             </p>
             <p>
-              También tuve experiencia en formación y creación de contenidos sobre IA en Krew Hub. Esa etapa fortaleció mi capacidad para explicar conceptos técnicos de forma clara.
+              También tuve experiencia en formación y creación de contenidos sobre IA. Esa etapa fortaleció mi capacidad para explicar conceptos técnicos de forma clara.
             </p>
           </Reveal>
 
