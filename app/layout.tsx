@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navbar";
 import { getMetadataBase, getSiteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -58,12 +56,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="es">
-      <body>
-        <a className="skip-link" href="#contenido">Saltar al contenido</a>
-        <Navbar />
-        <main id="contenido">{children}</main>
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

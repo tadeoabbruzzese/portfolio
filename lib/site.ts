@@ -18,7 +18,7 @@ export const whatsappUrl = `https://wa.me/${siteConfig.phone}?text=${encodeURICo
 
 export const navItems = [
   { label: "Proyectos", href: "/#proyectos" },
-  { label: "Soluciones", href: "/#soluciones" },
+  { label: "Soluciones", href: "/#capacidades" },
   { label: "Sobre mí", href: "/#sobre-mi" },
   { label: "Experiencia", href: "/#experiencia" },
   { label: "Contacto", href: "/#contacto" },
