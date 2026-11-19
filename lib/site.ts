@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Tadeo Abbruzzese",
-  role: "AI Strategist & Full Stack Software Developer",
+  role: "Desarrollo web y soluciones a medida",
   location: "Buenos Aires, Argentina",
   email: "tadeoabbruzzese@gmail.com",
   linkedin: "https://www.linkedin.com/in/tadeo-abbruzzese/",
@@ -9,7 +9,7 @@ export const siteConfig = {
   whatsappMessage:
     "Hola Tadeo, vi tu portfolio y me gustaría hablar con vos sobre un proyecto u oportunidad.",
   description:
-    "Portfolio de Tadeo Abbruzzese, AI Strategist y Full Stack Software Developer especializado en desarrollo web, software a medida, automatización e inteligencia artificial.",
+    "Sitios web, catálogos y aplicaciones a medida. Proyectos y demos de Tadeo Abbruzzese, desarrollador Full-Stack de Buenos Aires.",
 };
 
 export const whatsappUrl = `https://wa.me/${siteConfig.phone}?text=${encodeURIComponent(
@@ -18,7 +18,7 @@ export const whatsappUrl = `https://wa.me/${siteConfig.phone}?text=${encodeURICo
 
 export const navItems = [
   { label: "Proyectos", href: "/#proyectos" },
-  { label: "Soluciones", href: "/#capacidades" },
+  { label: "Soluciones", href: "/#servicios" },
   { label: "Sobre mí", href: "/#sobre-mi" },
   { label: "Experiencia", href: "/#experiencia" },
   { label: "Contacto", href: "/#contacto" },

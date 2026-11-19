@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
-import { homeCases, type CaseId } from "@/data/home-cases";
+import { homeCases, type CaseId, type PortfolioCase } from "@/data/home-cases";
 
 type OpenCase = (id: CaseId, trigger: HTMLButtonElement) => void;
 const CaseContext = createContext<OpenCase | null>(null);
@@ -20,7 +20,7 @@ export function CasePreviewProvider({ children }: { children: ReactNode }) {
   const closeButton = useRef<HTMLButtonElement>(null);
   const trigger = useRef<HTMLButtonElement | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const item = selected ? homeCases[selected] : null;
+  const item: PortfolioCase | null = selected ? homeCases[selected] : null;
 
   useEffect(() => {
     if (!selected || !dialog.current) return;
@@ -68,7 +68,7 @@ export function CasePreviewProvider({ children }: { children: ReactNode }) {
       if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) close();
     }}>
       <div className="dialog-top">
-        <span className="mono">VISTA PREVIA DEL CASO · PROTOTIPO</span>
+        <span className="mono">PROYECTO · DISEÑO Y DESARROLLO</span>
         <button ref={closeButton} className="close-dialog" type="button" aria-label="Cerrar vista previa" onClick={close}>Cerrar <span aria-hidden="true">×</span>
         </button>
       </div>
@@ -88,9 +88,11 @@ export function CasePreviewProvider({ children }: { children: ReactNode }) {
               <p id="case-approach">{item.approach}</p>
             </div>
           </div>
-          <p className="case-disclaimer">Síntesis para evaluar el diseño de la home. El caso de estudio completo queda para una próxima etapa.</p>
-          <a className="button primary" id="case-live" href={item.url} target="_blank" rel="noopener noreferrer">Visitar proyecto <span aria-hidden="true">↗</span>
-          </a>
+          <div className="case-role"><span className="case-detail-label">MI APORTE</span><p>{item.role}</p></div>
+          <ul className="case-feature-list">{item.features.map(feature => <li key={feature}>{feature}</li>)}</ul>
+          <p><strong>Estado:</strong> {item.status}</p>
+          {item.disclaimer && <p className="case-disclaimer">{item.disclaimer}</p>}
+          <div className="case-footer-actions">{item.url && <a className="button primary" id="case-live" href={item.url} target="_blank" rel="noopener noreferrer">{item.category === 'Demos de rediseño' ? 'Explorar demo' : 'Visitar sitio'}</a>}<a className="button secondary" href={`https://wa.me/541123221907?text=${encodeURIComponent('Hola Tadeo, vi el proyecto ' + item.title + ' en tu portfolio y me gustaría conversar sobre una idea para mi negocio.')}`} target="_blank" rel="noopener noreferrer">Consultar por algo similar</a></div>
         </div>
       </>}
     </dialog>

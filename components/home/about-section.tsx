@@ -2,7 +2,7 @@
 export function AboutSection() {
   return (
     <section className="about section container" id="sobre-mi" aria-labelledby="about-title">
-      <p className="eyebrow">04 — Un poco sobre mí</p>
+      <p className="eyebrow">Un poco sobre mí</p>
       <div className="about-layout">
         <h2 id="about-title" className="section-title">Curiosidad para<br />entender. <br />
           <span className="accent">Criterio para<br />construir.</span>

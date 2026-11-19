@@ -56,10 +56,10 @@ export function Header() {
       <nav id="navigation" ref={navigation} className={open ? "is-open" : undefined} aria-label="Navegación principal" onClick={event => {
         if ((event.target as HTMLElement).closest("a")) setOpen(false);
       }}>
-        <a href="#experiencia">Experiencia</a>
         <a href="#proyectos">Proyectos</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a className="nav-contact" href="#contacto">Conversemos <span aria-hidden="true">↗</span>
+        <a href="#servicios">Servicios</a>
+        <a href="#experiencia">Experiencia</a>
+        <a className="nav-contact" href="#contacto">Conversemos
         </a>
       </nav>
     </header>

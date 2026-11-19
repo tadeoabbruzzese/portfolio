@@ -1,99 +1,26 @@
-import Image from "next/image";
-import { CaseTrigger } from "./case-preview-dialog";
+'use client';
+
+import Image from 'next/image';
+import { useState } from 'react';
+import { caseEntries } from '@/data/home-cases';
+import { CaseTrigger } from './case-preview-dialog';
+
+const filters = ['Todos', 'Webs para negocios', 'Aplicaciones', 'Demos de rediseño'] as const;
 
 export function ProjectsSection() {
-  return (
-    <section className="projects section" id="proyectos" aria-labelledby="projects-title">
-      <div className="container">
-        <div className="section-kicker">
-          <p className="eyebrow">02 — Trabajo seleccionado</p>
-          <span className="mono">NEGOCIOS REALES / EXPLORACIÓN / PRODUCTO</span>
-        </div>
-        <div className="section-heading">
-          <h2 id="projects-title" className="section-title">Ideas que toman<br />forma en <span className="accent">software.</span>
-          </h2>
-          <p>Distintos contextos.<br />Una misma intención: construir algo útil.</p>
-        </div>
-
-        <article className="project camping reveal">
-          <CaseTrigger className="project-visual camping-visual" caseId="camping" aria-label="Ver caso de Camping Fossa Lupara">
-            <Image unoptimized src="/home-assets/camping.jpg" width={1432} height={1000} alt="Captura del sitio Camping Fossa Lupara: bienvenida al camping de Sestri Levante." loading="lazy" />
-            <span className="image-index mono">SESTRI LEVANTE, ITALIA</span>
-            <span className="image-arrow" aria-hidden="true">↗</span>
-          </CaseTrigger>
-          <div className="project-info">
-            <div>
-              <p className="eyebrow">01 / Cliente real · Turismo</p>
-              <h3>Camping <br />Fossa Lupara</h3>
-            </div>
-            <div>
-              <p>Una experiencia digital para descubrir el camping, explorar su propuesta y encontrar información en distintos idiomas.</p>
-              <p className="project-skills mono">DESARROLLO WEB · UX · INTERNACIONALIZACIÓN</p>
-              <CaseTrigger className="text-link" caseId="camping">Ver caso <span aria-hidden="true">↗</span>
-              </CaseTrigger>
-            </div>
-          </div>
-        </article>
-
-        <article className="project pastry reveal">
-          <div className="pastry-copy">
-            <p className="eyebrow">02 / Emprendimiento familiar</p>
-            <h3>Una historia<br />hecha a mano.<br />
-              <span>Jésica Frías.</span>
-            </h3>
-            <p>Rediseño comercial con storytelling, un catálogo visual y consultas personalizadas por WhatsApp.</p>
-            <p className="project-skills mono">REDISEÑO · CATÁLOGO · EXPERIENCIA COMERCIAL</p>
-            <CaseTrigger className="text-link" caseId="pasteleria">Ver caso <span aria-hidden="true">↗</span>
-            </CaseTrigger>
-          </div>
-          <CaseTrigger className="project-visual pastry-visual" caseId="pasteleria" aria-label="Ver caso de Pastelería Jésica Frías">
-            <Image unoptimized src="/home-assets/pasteleria.jpg" width={1425} height={990} alt="Captura de la nueva web de Pastelería Jésica Frías, con fotografía de torta y el mensaje Algo rico para compartir los buenos momentos." loading="lazy" />
-            <span className="image-arrow" aria-hidden="true">↗</span>
-          </CaseTrigger>
-        </article>
-
-        <article className="project tower reveal">
-          <CaseTrigger className="project-visual tower-visual" caseId="towerhub" aria-label="Ver caso de TowerHub">
-            <Image unoptimized src="/home-assets/towerhub.jpg" width={1432} height={1000} alt="Captura de TowerHub, archivo de personajes e información de Tower of Fantasy." loading="lazy" />
-            <span className="image-arrow" aria-hidden="true">↗</span>
-          </CaseTrigger>
-          <div className="tower-copy">
-            <p className="eyebrow">03 / Aplicación personal</p>
-            <h3>TowerHub</h3>
-            <p>Dar estructura a un universo de información. Interfaces, datos organizados y funcionalidades interactivas en una experiencia de exploración.</p>
-            <p className="project-skills mono">INTERFACES · INFORMACIÓN · INTERACCIÓN</p>
-            <CaseTrigger className="text-link" caseId="towerhub">Ver caso <span aria-hidden="true">↗</span>
-            </CaseTrigger>
-          </div>
-        </article>
-
-        <article className="anotiva reveal">
-          <div className="anotiva-title">
-            <p className="mono">
-              <span className="signal" aria-hidden="true">
-              </span> PRODUCTO PROPIO / EN DESARROLLO</p>
-            <h3>Anotiva<span>_</span>
-            </h3>
-          </div>
-          <div className="anotiva-copy">
-            <span className="sprint mono">SPRINT 02</span>
-            <p>De construir proyectos<br />a desarrollar un producto propio.</p>
-            <span className="anotiva-note">SaaS en desarrollo. Todavía no lanzado comercialmente.</span>
-          </div>
-          <div className="anotiva-glyph" aria-hidden="true">↗</div>
-        </article>
-
-        <a className="exploration" href="https://estudio-galia.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <Image unoptimized src="/home-assets/galia.jpg" width={1265} height={712} alt="Vista de la demo visual de Estudio Galia." loading="lazy" />
-          <div>
-            <p className="mono">EXPLORACIONES VISUALES / DEMO</p>
-            <h3>Estudio Galia</h3>
-            <p>Una exploración de identidad, composición y experiencia visual.</p>
-          </div>
-          <span className="exploration-action">Visitar demo <span aria-hidden="true">↗</span>
-          </span>
-        </a>
-      </div>
-    </section>
-  );
+  const [filter, setFilter] = useState<typeof filters[number]>('Todos');
+  const visible = caseEntries.filter(([, item]) => filter === 'Todos' || item.category === filter);
+  return <section className="work-library section" id="proyectos" aria-labelledby="projects-title">
+    <div className="container">
+      <div className="section-kicker"><p className="eyebrow">Portfolio de proyectos</p><span className="mono">DISEÑO + DESARROLLO + CRITERIO</span></div>
+      <div className="section-heading work-heading"><h2 id="projects-title" className="section-title">El trabajo habla.<br /><span className="accent">Conocé cada proyecto.</span></h2><p>Webs para negocios, herramientas propias y propuestas de rediseño. En cada caso: el contexto, mi aporte y lo que se puede explorar.</p></div>
+      <div className="work-toolbar"><div className="work-filters" role="group" aria-label="Filtrar proyectos">{filters.map(value => <button key={value} aria-pressed={filter === value} onClick={() => setFilter(value)}>{value}<span>{value === 'Todos' ? caseEntries.length : caseEntries.filter(([, item]) => item.category === value).length}</span></button>)}</div><p role="status" aria-live="polite">{visible.length} proyectos</p></div>
+      {filter === 'Demos de rediseño' && <p className="demo-explainer">Las demos son exploraciones independientes de diseño y funcionamiento. No implican una contratación ni reemplazan los sitios oficiales.</p>}
+      <div className="work-grid">{visible.map(([id, item]) => <article key={id} className={`work-card${id === 'camping' ? ' work-featured' : ''}`}>
+        <CaseTrigger caseId={id} className="work-image" aria-label={`Ver proyecto: ${item.title}`}><Image src={item.image} alt={item.alt} width={1440} height={1000} sizes={id === 'camping' ? '(max-width: 700px) 100vw, 800px' : '(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw'} /><span className="work-image-action">Explorar proyecto</span></CaseTrigger>
+        <div className="work-copy"><div className="work-meta"><span>{item.category}</span><span className={item.category === 'Demos de rediseño' ? 'concept-label' : ''}>{item.status}</span></div><h3>{item.title}</h3><p>{item.summary}</p><ul className="work-tags" aria-label="Funcionalidades">{item.features.slice(0, 3).map(feature => <li key={feature}>{feature}</li>)}</ul><div className="work-actions"><CaseTrigger caseId={id} className="text-link">Ver proyecto</CaseTrigger>{item.url && <a href={item.url} target="_blank" rel="noopener noreferrer">{item.category === 'Demos de rediseño' ? 'Abrir demo' : 'Visitar sitio'}</a>}</div></div>
+      </article>)}</div>
+      <div className="work-closing"><p>¿Ves algo que podría servir para tu negocio?</p><a className="text-link" href="#contacto">Hablemos de tu idea</a></div>
+    </div>
+  </section>;
 }

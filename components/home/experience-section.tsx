@@ -3,7 +3,7 @@ export function ExperienceSection() {
   return (
     <section className="experience section container" id="experiencia" aria-labelledby="experience-title">
       <div className="section-kicker">
-        <p className="eyebrow">01 — Experiencia profesional</p>
+        <p className="eyebrow">Experiencia profesional</p>
         <span className="mono">DE LA NECESIDAD A LA SOLUCIÓN</span>
       </div>
       <h2 id="experience-title" className="section-title">Del problema operativo<br />al software <span className="accent">funcional.</span>

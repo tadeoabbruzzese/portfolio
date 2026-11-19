@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Tadeo Abbruzzese — AI Strategist & Full Stack Software Developer";
+export const alt = "Tadeo Abbruzzese — Desarrollo web y soluciones a medida";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -29,9 +29,9 @@ export default function OpenGraphImage() {
           <span>Tadeo Abbruzzese</span>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-          <div style={{ fontSize: 72, maxWidth: 970, lineHeight: 1.02, letterSpacing: -3 }}>AI Strategist & Full Stack Software Developer</div>
+          <div style={{ fontSize: 72, maxWidth: 970, lineHeight: 1.02, letterSpacing: -3 }}>Desarrollo web y soluciones a medida</div>
           <div style={{ display: "flex", alignItems: "center", gap: 22, fontSize: 26, color: "#a5aca3" }}>
-            <span style={{ width: 52, height: 2, background: "#c8ff3f" }} /> Software · Web · AI
+            <span style={{ width: 52, height: 2, background: "#c8ff3f" }} /> Webs · Catálogos · Aplicaciones
           </div>
         </div>
       </div>

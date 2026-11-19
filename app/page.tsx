@@ -4,17 +4,18 @@ import { Hero } from "@/components/home/hero";
 import { ContextBand } from "@/components/home/context-band";
 import { ExperienceSection } from "@/components/home/experience-section";
 import { ProjectsSection } from "@/components/home/projects-section";
-import { CapabilitiesSection } from "@/components/home/capabilities-section";
+import { ServicesSection } from "@/components/home/services-section";
 import { AboutSection } from "@/components/home/about-section";
 import { ContactSection } from "@/components/home/contact-section";
 import { Footer } from "@/components/home/footer";
 import { CasePreviewProvider } from "@/components/home/case-preview-dialog";
 import { HomeEnhancements } from "@/components/home/home-enhancements";
 import "@/components/home/home.css";
+import "@/components/home/portfolio-refinement.css";
 
 export const metadata: Metadata = {
-  title: { absolute: "Tadeo Abbruzzese — Desarrollo con propósito" },
-  description: "Tadeo Abbruzzese. Desarrollo Full-Stack, aplicaciones empresariales, integraciones y productos digitales.",
+  title: { absolute: "Tadeo Abbruzzese — Desarrollo web y soluciones a medida" },
+  description: "Renovación de sitios web, catálogos y aplicaciones a medida. Conocé los proyectos y demos de Tadeo Abbruzzese, desarrollador Full-Stack de Buenos Aires.",
   icons: { icon: [{ url: "/home-assets/favicon.svg", type: "image/svg+xml" }] },
 };
 export const viewport: Viewport = { themeColor: "#111310" };
@@ -27,9 +28,9 @@ export default function HomePage() {
       <main id="contenido">
         <Hero />
         <ContextBand />
-        <ExperienceSection />
         <ProjectsSection />
-        <CapabilitiesSection />
+        <ServicesSection />
+        <ExperienceSection />
         <AboutSection />
         <ContactSection />
       </main>
