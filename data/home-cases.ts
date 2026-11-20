@@ -47,26 +47,6 @@ export const homeCases = {
     features: ['Búsqueda y filtros', 'Fichas de personajes', 'Tier list interactiva', 'Firebase / Firestore'],
     status: 'Aplicación publicada', url: 'https://www.towerhub.online/'
   },
-  crm: {
-    title: 'CRM personal', category: 'Aplicaciones', context: 'Herramienta propia · Gestión y seguimiento',
-    image: '/home-assets/crm-concept.svg', alt: 'Esquema ilustrativo del CRM con etapas, propuestas y próximos contactos. No contiene datos reales.',
-    summary: 'Postulaciones, contactos profesionales y propuestas freelance reunidos en un espacio de trabajo.',
-    challenge: 'Llevar el seguimiento de distintos contactos sin perder el contexto de cada conversación ni confundir intentos con resultados.',
-    approach: 'Fichas con estados explícitos, próximos pasos, filtros y un historial de actividad. Acceso privado con Firebase.',
-    role: 'Diseño y desarrollo con Next.js, TypeScript y Firebase; implementación de reglas de acceso y seguimiento comercial.',
-    features: ['Panel de seguimiento', 'Contactos y networking', 'Propuestas freelance', 'Historial y acceso privado'],
-    status: 'Herramienta de uso privado', disclaimer: 'Vista ilustrativa con datos ficticios. La aplicación y sus registros personales no se comparten públicamente.'
-  },
-  anotiva: {
-    title: 'Anotiva', category: 'Aplicaciones', context: 'Producto propio · Android · En desarrollo',
-    image: '/home-assets/anotiva-concept.svg', alt: 'Composición conceptual de Anotiva: ofertas, historial y herramientas para conductores.',
-    summary: 'Un producto para ayudar a conductores de Uber y DiDi a interpretar ofertas y organizar información de su actividad.',
-    challenge: 'Convertir información de trabajo cotidiano en herramientas de consulta útiles para el conductor.',
-    approach: 'Desarrollo incremental para Android, lectura local mediante OCR, historial por cuenta y validación en un entorno de pruebas.',
-    role: 'Definición del producto, desarrollo e iteraciones de interfaz y funcionamiento.',
-    features: ['Aplicación Android', 'OCR local', 'Historial por cuenta', 'Validación incremental'],
-    status: 'En desarrollo', disclaimer: 'Producto todavía no lanzado comercialmente. La imagen es una composición conceptual, no una captura de producción.'
-  },
   cofer: {
     title: 'Aceros Cofer', category: 'Demos de rediseño', context: 'Propuesta conceptual · Industria del acero',
     image: '/home-assets/cofer.jpg', alt: 'Demo de Aceros Cofer con estética industrial y visualización interactiva de piezas de acero.',
@@ -99,16 +79,6 @@ export const homeCases = {
     features: ['Buscador de productos', 'Filtros por rubro', 'Lista de consulta', 'Fotografías del local'],
     status: 'Demo conceptual', url: 'https://ferreteria-freire-demo.vercel.app',
     disclaimer: 'Propuesta independiente, no contratada. La demo no envía consultas ni confirma stock o precios.'
-  },
-  resortecnica: {
-    title: 'Resortécnica', category: 'Demos de rediseño', context: 'Propuesta conceptual · Fabricación industrial',
-    image: '/home-assets/resortecnica.jpg', alt: 'Vista previa de Resortécnica con una animación de resorte y catálogo industrial.',
-    summary: 'Un catálogo industrial con buscador, filtros y un resorte que responde a la interacción.',
-    challenge: 'Explicar una oferta técnica y hacer más accesible la exploración de sus familias de productos.',
-    approach: 'Fotografías propias de la empresa, catálogo filtrable y una animación de resorte que se puede comprimir y estirar.',
-    role: 'Diseño y desarrollo del prototipo local.',
-    features: ['Catálogo filtrable', 'Buscador', 'Resorte interactivo', 'Fotografías de productos'],
-    status: 'Prototipo local', disclaimer: 'Propuesta independiente no contratada, todavía sin demo pública. La animación es visual, no un cálculo técnico.'
   },
   galia: {
     title: 'Estudio Galia', category: 'Demos de rediseño', context: 'Exploración visual · Sitio de estudio',
